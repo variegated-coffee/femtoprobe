@@ -6,7 +6,7 @@
 
 The Femtoprobe is an ultra-compact SWD and UART debug probe for [APEC SoM](https://github.com/variegated-coffee/apec-som) carrier boards, built around the RP2040. It's smaller than a Picoprobe, and it connects to the host through one of the APEC SoM's built-in USB hub ports, so a single USB-C cable to the carrier board carries both the controller's USB and the debug probe.
 
-The Femtoprobe is meant to be fitted on a pin header during development and removed when it's no longer needed. It isn't as feature-rich as the Raspberry Pi Debug Probe or as sophisticated as a J-Link; its strengths are simplicity and size.
+The Femtoprobe is either meant to be fitted on a pin header during development and removed when it's no longer needed, or to be soldered on using the castellated pins. It isn't as feature-rich as the Raspberry Pi Debug Probe or as sophisticated as a J-Link; its strengths are simplicity and size.
 
 ## High-level features
 
@@ -17,9 +17,13 @@ The Femtoprobe is meant to be fitted on a pin header during development and remo
 * BOOT and RESET pads for entering the USB bootloader
 * 27.93 × 12.13 mm, 4 layers, 8 castellated pins on a 2.54 mm pitch; the pins also take ordinary 2.54 mm pin headers
 
+## Firmware
+
+The Femtoprobe is intended to be used with the [Raspberry Pi Debug Probe firmware](https://github.com/raspberrypi/debugprobe). The board *does* however use different IO assignments, and as such, a small firmware patch is provided in [firmware-patch.diff](firmware-patch.diff).
+
 ## Project status
 
-The current hardware revision is R2A. The Femtoprobe isn't considered stable yet.
+The current hardware revision is R2A. It hasn't been manufactured yet, and you probably shouldn't be the first one to do it. The earlier engineering validation revisions, EV1, have been manufactured;
 
 ## Documentation
 
@@ -37,7 +41,5 @@ The designs are provided “as is” under the CERN-OHL-P v2. See sections 5.1 a
 ## License
 
 The design files and documentation in this repository are licensed under the CERN Open Hardware Licence Version 2 – Permissive (CERN-OHL-P-2.0); see [LICENSE.txt](LICENSE.txt).
-
-The carrier-side symbol and footprints for the Femtoprobe (`Femtoprobe` in `APEC_SoM.kicad_sym`, and `Femtoprobe` and `Femtoprobe SMT` in `APEC_SoM.pretty`) are part of the [APEC SoM](https://github.com/variegated-coffee/apec-som) repository, under the same licence.
 
 The schematic and PCB contain copies of symbols, footprints and 3D model references from the KiCad libraries, which keep their own licence; see [THIRD_PARTY.md](THIRD_PARTY.md).
