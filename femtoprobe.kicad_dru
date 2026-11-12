@@ -1,0 +1,9 @@
+(version 1)
+
+# J3 and J4 are the castellated edge pins. Their plated holes are centred on
+# the board edge so they become half-holes when the outline is milled, which
+# breaks the normal copper-to-edge clearance on purpose.
+(rule "Castellated edge pins (J3, J4)"
+	(severity ignore)
+	(constraint edge_clearance (min 0mm))
+	(condition "A.memberOfFootprint('J3') || A.memberOfFootprint('J4')"))

@@ -1,0 +1,9 @@
+jlcpcb
+*-backups
+/.mcp.json
+fp-info-cache
+_autosave-*
+~*.lck
+*.lck
+.DS_Store
+.claude/settings.local.json
